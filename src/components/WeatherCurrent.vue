@@ -65,7 +65,7 @@ watch(
   height: 286px;
 
   @media (max-width: 649.98px) {
-    height: auto;
+    min-height: 400px;
   }
 
   &__content {
@@ -78,6 +78,7 @@ watch(
       flex-direction: column;
       align-items: center;
       text-align: center;
+      height: 100%;
     }
   }
 
@@ -85,6 +86,7 @@ watch(
     @media (max-width: 649.98px) {
       width: 100%;
       text-align: center;
+      margin-top: 20px;
     }
   }
 
