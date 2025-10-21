@@ -1,0 +1,92 @@
+@import "./base.css";
+@import "./fonts.css";
+@import "./transitions.css";
+
+button {
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+button:not(.notab):focus {
+  outline: 2px solid #4a90e2;
+}
+
+button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+a,
+a:visited,
+a:focus {
+  display: block;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.html,
+.body {
+  background-color: var(--bgc-main);
+  color: snow;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  height: 100%;
+  min-width: 375px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  min-width: 375px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+
+.weather-icon-l {
+  width: 120px;
+  height: 120px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.weather-icon-m {
+  width: 60px;
+  height: 60px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.weather-icon-s {
+  width: 40px;
+  height: 40px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.dropdown-bt {
+  position: relative;
+  margin-top: 8px;
+}
+
+.dropdown-bt::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #302f4a;
+}
