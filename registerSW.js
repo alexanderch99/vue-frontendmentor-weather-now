@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/vue-frontendmentor-weather-now/sw.js', { scope: '/vue-frontendmentor-weather-now/' })})}
