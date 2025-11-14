@@ -116,6 +116,7 @@ precipitation_unit=${precipitationUnitForRequest}`
       throw new Error("Получены невалидные данные от api");
     }
 
+    console.log(weatherData);
     return weatherData;
   } catch (error) {
     if (error instanceof Error) {

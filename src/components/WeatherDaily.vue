@@ -14,8 +14,8 @@ const { lang, daily, tUnit } = defineProps<{
 
 const day = new Date().getDay();
 
-function correctIndex(index: number) {
-  return (index + day) % 7;
+function correctIndexForDay(index: number) {
+  return (index + day - 1) % 7;
 }
 
 function getCorrectWeatherIcon(key: number, data: DailyData) {
@@ -32,7 +32,7 @@ function getCorrectWeatherIcon(key: number, data: DailyData) {
       <div v-for="(time, key) in daily.time" :key="time || undefined" class="daily__item">
         <div v-if="time == null"></div>
         <div v-else class="daily__data">
-          <p class="text text-s">{{ weekdayShortObj[lang][correctIndex(key)] }}</p>
+          <p class="text text-s">{{ weekdayShortObj[lang][correctIndexForDay(key)] }}</p>
           <img
             :src="getCorrectWeatherIcon(key, daily).value"
             alt="icon"
@@ -41,10 +41,10 @@ function getCorrectWeatherIcon(key: number, data: DailyData) {
           />
           <div class="daily__data-bottom">
             <span class="text text-s">
-              {{ Math.round(daily.temperature_2m_max[correctIndex(key)] ?? 0) + tUnit }}</span
+              {{ Math.round(daily.temperature_2m_max[key] ?? 0) + tUnit }}</span
             >
             <span class="text text-s daily__min">
-              {{ Math.round(daily.temperature_2m_min[correctIndex(key)] ?? 0) + tUnit }}</span
+              {{ Math.round(daily.temperature_2m_min[key] ?? 0) + tUnit }}</span
             >
           </div>
         </div>
